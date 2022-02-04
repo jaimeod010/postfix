@@ -1,0 +1,19 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     servidor.jaime.org. root.jaime.org. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      servidor.jaime.org.
+servidor                IN      A       192.168.222.2
+cliente1                IN      A       192.168.222.51
+router                  IN      A       192.168.222.1
+cliente2.jaime.org.     IN      A       192.168.222.52
+server                  IN      CNAME   servidor
+correo                  IN      A       192.168.222.2
+jaime.org.              IN      MX 10   correo
